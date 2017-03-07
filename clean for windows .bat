@@ -1,4 +1,5 @@
 @echo off
+echo 歡迎使用clean for windows .bat
 echo 正在清除系統垃圾檔案中，請稍候……
 echo Dream Can 科技創意綜合研究室 https://www.facebook.com/Dream-Can-250915808698393/
 echo windows 7 系統垃圾清理
@@ -7,8 +8,8 @@ echo 請勿關閉本窗口。
 echo 正在清除系統垃圾文件，請稍後...... 
 echo 刪除補丁備份目錄 
 RD %windir%\$hf_mig$ /Q /S 
-echo 把補丁卸載文件夾的名字保存成2950800.txt 
-dir %windir%\$NtUninstall* /a:d /b >%windir%\2950800.txt 
+echo 把補丁卸載文件夾的名字保存成excrement.txt 
+dir %windir%\$NtUninstall* /a:d /b >%windir%\excrement.txt 
 echo 從2950800.txt中讀取文件夾列表並且刪除文件夾 
 for /f %%i in (%windir%\2950800.txt) do rd %windir%\%%i /s /q 
 echo 刪除2950800.txt 
@@ -84,5 +85,20 @@ md  "%userprofile%Local SettingsTemp"
 rd /s /q  "%systemdrive%Program FilesTemp"
 md  "%systemdrive%Program FilesTemp"
 rd /s /q "%systemdrive%d"
+del /f /s /q %systemdrive%*.tmp
+del /f /s /q %systemdrive%*._mp
+del /f /s /q %systemdrive%*.log
+del /f /s /q %systemdrive%*.gid
+del /f /s /q %systemdrive%*.chk
+del /f /s /q %systemdrive%*.old
+del /f /s /q %systemdrive%recycled*.*
+del /f /s /q %windir%*.bak
+del /f /s /q %windir%prefetch*.*
+rd /s /q %windir%temp & md %windir%temp
+del /f /q %userprofile%cookies*.*
+del /f /q %userprofile%recent*.*
+del /f /s /q “%userprofile%Local SettingsTemporary Internet Files*.*"
+del /f /s /q “%userprofile%Local SettingsTemp*.*"
+del /f /s /q “%userprofile%recent*.*"
 echo 清除系統垃圾檔案完成！！
 echo. & pause
